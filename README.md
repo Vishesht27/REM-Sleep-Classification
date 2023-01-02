@@ -22,6 +22,8 @@ Sleep is a significant determinant of mental wellbeing and happiness. Sleep diso
 
 The objective of work was to study the EDF data and process it in such a way that we can use it for visualization and to train model. Also, after visualizing the EDF data, we had used different type of classification algorithms to build a model, which can classify the REM and Non-REM type of sleep disorder. So that, it can help people manage their sleep time accordingly and easily understand their REM sleep disorder.
 
+<img src="https://github.com/Vishesht27/REM-Sleep-Classification/blob/main/visuals/tech_stack_achitecture.jpg">
+
 ## Dataset Description
 
 The Cyclic Alternating Pattern (CAP) is a periodic EEG activity occurring during NREM sleep. It is characterized by cyclic sequences of cerebral activation (phase A) followed by periods of deactivation (phase B) which separate two successive phase A periods with an interval <1 min. A phase A period and the following phase B period define a CAP cycle, and at least two CAP cycles are required to form a CAP sequence. The CAP sleep database a collection of 108 polysomnographic recordings registered at the Sleep Disorders Center of the Ospedale Maggiore of Parma, Italy. The waveforms (contained in the .edf files of the database) include at least 3 EEG channels (F3 or F4, C3 or C4 and O1 or O2, referred to A1 or A2), EOG (2 channels), EMG of the submental is muscle, bilateral anterior tibial EMG, respiration signals (airflow, abdominal and thoracic effort and SaO2) and EKG. Additional traces include EEG bipolar traces, according to the 10-20 international system (Fp1-F3, F3-C3, C3-P3, P3-O1 and/or Fp2-F4, F4-C4, C4-P4, P4-O2).
@@ -49,10 +51,13 @@ TensorFlow Decision Forests (TF-DF) is a collection of state-of-the-art algorith
 
 A Random Forest is a collection of deep CART decision trees trained independently and without pruning. Each tree is trained on a random subset of the original training dataset (sampled with replacement). The algorithm is unique in that it is robust to overfitting, even in extreme cases e.g., when there are more features than training examples. It is probably the most well-known of the Decision Forest training algorithms.
 
+<img src="https://github.com/Vishesht27/REM-Sleep-Classification/blob/main/visuals/random_forest.jpg">
 
 ### Gradient Boosted Trees
 
 A GBT (Gradient Boosted [Decision] Tree) Is a set of shallow decision trees trained sequentially. Each tree is trained to predict and then "correct" for the errors of the previously trained trees (more precisely each tree predict the gradient of the loss relative to the model output).
+
+<img src="https://github.com/Vishesht27/REM-Sleep-Classification/blob/main/visuals/gradient_boosted_trees.jpg">
 
 ## Summary
 
@@ -60,3 +65,6 @@ To summarize, we extracted the data from the source. Merging the two types of da
 annotation file for the same. We preprocessed the data and applied Minmax Scalar for scaling the features and visualized the data. After visualization, we filtered the data we needed for training the model. After selecting the data required preciously, we decided to train a simple model and got a poor accuracy. Hence, we decided to go with ensemble learning. Ensemble learning is the process by which multiple models, such as classifiers or experts, are strategically generated and combined to solve a particular computational intelligence problem. We then trained and separate models including Naïve Bayes, Gradient Boosted trees, Logistic Regression and Random Forest. TensorFlow and Scikit-learn libraries were used for the same. After that we tried to combine to the metrics of all models to put in comparison and visualization. After carefully observing the results and visualization of the comparison, we did a score level fusion for the same.
 
 We intend to add another feature that will advise the patient on how to avoid REM sleep disorder. The model will make recommendations based on the patient's condition; if the patient does not have REM sleep disorder, the model will make recommendations based on the sleep disorder.
+
+<img src = "https://github.com/Vishesht27/REM-Sleep-Classification/blob/main/visuals/accuracy.jpg">
+
